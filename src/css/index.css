@@ -1,0 +1,58 @@
+@import './variables.css';
+
+body{
+  background-color: var(--secundary-color-dark);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--primary-font);
+}
+
+.tabla{
+  width: 80%;
+  text-align: left;
+  border-collapse: collapse;
+}
+
+.tabla thead{
+  font-size: 20px;
+  background-color: var(--main-color);
+  color: var(--white);
+}
+
+.tabla tbody{
+  background-color: var(--secundary-color-dark);
+  color: var(--white);
+}
+
+.tabla th, .tabla td{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+}
+
+.tabla tr:nth-child(even){
+  background-color: var(--secundary-color-light);
+}
+
+.menu{
+  background-color: var(--main-color);
+  padding: 20px;
+  font-size: 20px;
+}
+
+.menu a {
+  color: var(--white);
+  padding-right: 50px;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60px;
+}
+
+.rojo {
+  color: red;
+}

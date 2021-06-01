@@ -1,0 +1,28 @@
+@import './variables.css';
+
+.publicaciones{
+    width: 80%;
+    background-color: var(--secundary-color-dark);
+    color: var(--white);
+    margin: auto;
+}
+
+.publicaciones_main-title{
+    background-color: var(--main-color);
+    padding: 20px 50px;
+}
+
+.publicaciones_container{
+    background-color: var(--secundary-color-light);
+    padding: 20px 50px;
+    border-bottom: 2px solid var(--main-color);
+    cursor: pointer;
+}
+
+.publicaciones_titulo{
+    color: var(--main-color);
+}
+
+.publicaciones_description{
+
+}
