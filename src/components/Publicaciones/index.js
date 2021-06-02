@@ -3,12 +3,17 @@ import { connect } from 'react-redux';
 
 import Spinner from '../general/Spinner';
 import Fatal from '../general/Fatal';
+import Comentarios from '../Publicaciones/Comentarios';
 
 import * as usuariosActions from '../../actions/usuariosActions';
 import * as publicacionesActions from '../../actions/publicacionesActions';
 
 const { traerTodos: usuariosTraerDatos } = usuariosActions;
-const { traerPorUsuario: publicacionesTraerPorUsuario, abrirCerrar } = publicacionesActions;
+const { 
+        traerPorUsuario: publicacionesTraerPorUsuario,
+        abrirCerrar,
+        traerComentarios
+} = publicacionesActions;
 
 class Publicaciones extends React.Component {
     
@@ -88,7 +93,7 @@ class Publicaciones extends React.Component {
             <div 
                 className='publicaciones_container'
                 key={ publicacion.id }
-                onClick={ () => this.props.abrirCerrar (pub_key, com_key) }
+                onClick={ () => this.mostrarComentarios(pub_key, com_key, publicacion.comentarios) }
             >
                 <h2 className='publicaciones_titulo'>
                     { publicacion.title}
@@ -96,9 +101,19 @@ class Publicaciones extends React.Component {
                 <h3 className='publicaciones_description'>
                     { publicacion.body}
                 </h3>
+                {
+                    (publicacion.abierto) ? <Comentarios comentarios={ publicacion.comentarios }/> : ''
+                }
             </div>
         ))
     );
+
+    mostrarComentarios = ( pub_key, com_key, comentarios) => {
+        this.props.abrirCerrar(pub_key, com_key);
+        if (!comentarios.length) {
+            this.props.traerComentarios(pub_key, com_key, comentarios);
+        }
+    };
 
     render(){
         console.log(this.props);
@@ -121,7 +136,8 @@ const mapStateToProps = ({ usuariosReducer, publicacionesReducer }) => {
 const mapDispatchToProps = {
     usuariosTraerDatos,
     publicacionesTraerPorUsuario,
-    abrirCerrar
+    abrirCerrar,
+    traerComentarios
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Publicaciones);

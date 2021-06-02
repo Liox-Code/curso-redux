@@ -1,0 +1,44 @@
+@import './variables.css';
+
+.tareas-page{
+    width: 80%;
+    margin: auto;
+    color: var(--white);
+}
+
+.tareas-page-title{
+    padding: 20px 30px;
+    color: var(--main-color);
+}
+
+.tareas{
+    padding: 10px 30px;
+    margin-bottom: 20px;
+    background-color: var(--secundary-color-light);
+}
+
+.tareas-title{
+    color: var(--main-color);
+}
+
+.tareas-container{
+}
+
+.tareas-row{
+    display: flex;
+    align-items: center;
+    height: 40px;
+    margin-bottom: 10px;
+    padding: 0px 20px;
+    background-color: var(--secundary-color-dark);
+}
+
+.tareas-checkbox{
+    width: 20px;
+    height: 20px;
+    margin-right: 20px;
+}
+
+.tareas-description{
+    font-size: 20px;
+}

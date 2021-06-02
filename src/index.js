@@ -11,6 +11,8 @@ import './css/index.css';
 import './css/spinner.css';
 import './css/iconos.css';
 import './css/publicaciones.css';
+import './css/comentarios.css';
+import './css/tareas.css';
 
 const store = createStore(
   reducers,
